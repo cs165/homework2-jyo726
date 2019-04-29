@@ -14,14 +14,31 @@ const POSITIVE_MESSAGES = [
   'Your life matters.'
 ];
 
+const cursor_image = chrome.runtime.getURL('images/rose-cursor.gif');
+const backgorund_image = chrome.runtime.getURL('images/sparkle.gif');
 chrome.runtime.onConnect.addListener(function(port) {
   port.onMessage.addListener(onMessage);
 });
+
+function startGardening(){
+	
+}
+
+function stopGardening(){
+	
+	
+}
 
 function onMessage(gardeningInProgress) {
   // TODO(you): Implement this function for extra credit! Add helper functions
   // as needed.
 
+  if (gardeningInProgress) {
+    startGardening();
+  }
+  else{
+    stopGardening();
+  }
   // NOTE: This extension is EXTRA CREDIT and is not required for HW2.
 
   // If `gardeningInProgress` is true, that means "Start Gardening" was clicked.
